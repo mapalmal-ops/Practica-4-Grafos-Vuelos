@@ -1,6 +1,10 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("====================================");
         System.out.println("   SISTEMA DE VUELOS ECONOMICOS");
@@ -24,7 +28,19 @@ public class Main {
 
         // Mostrar todos los vuelos registrados
         grafo.mostrarVuelos();
+
+        // Solicitar origen y destino al usuario
+        System.out.println("\n========== BUSQUEDA DE VUELO ==========");
+
+        System.out.print("Ingrese la ciudad de origen: ");
+        String origen = scanner.nextLine();
+
+        System.out.print("Ingrese la ciudad de destino: ");
+        String destino = scanner.nextLine();
+
         // Buscar la ruta mas economica
-grafo.buscarRutaMasBarata("Quito", "Loja");
+        grafo.buscarRutaMasBarata(origen, destino);
+
+        scanner.close();
     }
 }

@@ -47,7 +47,12 @@ public class GrafoVuelos {
     // Buscar la ruta mas economica utilizando Dijkstra
     public void buscarRutaMasBarata(String origen, String destino) {
 
-        long inicio = System.nanoTime();
+    if (!grafo.containsKey(origen) || !grafo.containsKey(destino)) {
+        System.out.println("\nLa ciudad de origen o destino no se encuentra registrada.");
+        return;
+    }
+
+    long inicio = System.nanoTime();
 
         Map<String, Double> costos = new HashMap<>();
         Map<String, String> anteriores = new HashMap<>();
